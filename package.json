@@ -4,9 +4,9 @@
   "version": "0.14.0",
   "scripts": {
     "generate:dev": "dotenv -e .env.local -- node ./scripts/generate.cjs",
-    "generate": "node ./scripts/generate.cjs",
+    "generate:prod": "node ./scripts/generate.cjs",
     "dev": "npm run generate:dev && next dev -p 3110",
-    "build": "npm run generate && next build",
+    "build": "npm run generate:prod && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
