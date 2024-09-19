@@ -6,7 +6,7 @@
     "dev": "npm run generate && next dev -p 3110",
     "generate": "dotenv -e .env.local -- node ./scripts/generate.cjs",
     "build": "npm run generate && next build",
-    "start": "next start -p 3110 -H localhost",
+    "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
