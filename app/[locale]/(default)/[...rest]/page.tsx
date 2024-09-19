@@ -48,4 +48,4 @@ export default async function CatchAllPage({ params }: { params: CatchAllParams 
   );
 }
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';

@@ -93,4 +93,4 @@ export default async function MaintenancePage() {
   );
 }
 
-// export const runtime = 'edge';
+export const runtime = 'nodejs';
