@@ -75,4 +75,4 @@ export default async function WebPage({ params: { id } }: Props) {
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

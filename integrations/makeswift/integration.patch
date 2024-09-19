@@ -58,7 +58,7 @@ index 71d40507..9179455c 100644
 +  );
  }
 +
-+export const runtime = 'nodejs';
++export const runtime = 'edge';
 diff --git a/core/app/[locale]/layout.tsx b/core/app/[locale]/layout.tsx
 index 521f4ffa..26fb0fb9 100644
 --- a/core/app/[locale]/layout.tsx
@@ -171,7 +171,7 @@ index 00000000..6a47e7a8
 +  return NextResponse.json(removeEdgesAndNodes(data.site.featuredProducts));
 +};
 +
-+export const runtime = 'nodejs';
++export const runtime = 'edge';
 diff --git a/core/components/ui/accordions/accordion.makeswift.tsx b/core/components/ui/accordions/accordion.makeswift.tsx
 new file mode 100644
 index 00000000..2073f07a

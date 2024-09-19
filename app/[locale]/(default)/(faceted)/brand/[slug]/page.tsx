@@ -131,4 +131,4 @@ export default async function Brand({ params: { slug, locale }, searchParams }: 
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

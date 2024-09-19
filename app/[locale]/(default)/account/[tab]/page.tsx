@@ -88,4 +88,4 @@ export default async function AccountTabPage({ params: { tab }, searchParams }: 
   }
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

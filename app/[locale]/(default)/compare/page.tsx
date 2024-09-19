@@ -386,4 +386,4 @@ export default async function Compare({
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';
