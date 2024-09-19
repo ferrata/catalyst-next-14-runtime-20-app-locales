@@ -1,0 +1,51 @@
+import { Page as MakeswiftPage } from '@makeswift/runtime/next';
+import { getSiteVersion } from '@makeswift/runtime/next/server';
+import { notFound } from 'next/navigation';
+
+import { locales } from '~/i18n';
+import { client } from '~/lib/makeswift/client';
+import { MakeswiftProvider } from '~/lib/makeswift/provider';
+
+interface CatchAllParams {
+  locale: string;
+  rest: string[];
+}
+
+export async function generateStaticParams() {
+  const pages = await client.getPages().toArray();
+
+  const p = pages
+    .flatMap((page) =>
+      locales.map((locale) => ({
+        rest: page.path.split('/').filter((segment) => segment !== ''),
+        locale,
+      })),
+    )
+    .filter(({ rest }) => rest.length > 0);
+
+  // console.log('CatchAllPage.generateStaticParams', { p });
+
+  return p;
+}
+
+export default async function CatchAllPage({ params }: { params: CatchAllParams }) {
+  // console.debug('CatchAllPage', { params });
+  // unstable_setRequestLocale(params.locale);
+
+  const path = `/${params.rest.join('/')}`;
+
+  const snapshot = await client.getPageSnapshot(path, {
+    siteVersion: getSiteVersion(),
+    locale: params.locale,
+  });
+
+  if (snapshot == null) return notFound();
+
+  return (
+    <MakeswiftProvider>
+      <MakeswiftPage snapshot={snapshot} />
+    </MakeswiftProvider>
+  );
+}
+
+export const runtime = 'nodejs';
