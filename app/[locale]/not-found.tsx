@@ -89,4 +89,4 @@ export default async function NotFound() {
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

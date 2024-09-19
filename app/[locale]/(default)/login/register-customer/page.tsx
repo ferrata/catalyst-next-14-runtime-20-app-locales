@@ -71,4 +71,4 @@ export default async function RegisterCustomer({ params: { locale } }: Props) {
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

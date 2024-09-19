@@ -89,4 +89,4 @@ export default async function WebPage({ params: { locale, id } }: Props) {
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

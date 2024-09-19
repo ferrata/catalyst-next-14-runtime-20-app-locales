@@ -15,4 +15,4 @@ export const GET = async () => {
   });
 };
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

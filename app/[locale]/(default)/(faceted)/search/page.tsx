@@ -126,4 +126,4 @@ export default async function Search({ params: { locale }, searchParams }: Props
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';

@@ -144,4 +144,4 @@ export default async function Category({ params: { locale, slug }, searchParams 
   );
 }
 
-export const runtime = 'nodejs';
+export const runtime = 'edge';
